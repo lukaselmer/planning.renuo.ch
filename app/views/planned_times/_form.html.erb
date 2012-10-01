@@ -1,33 +1,32 @@
-<%= form_for(@planned_time) do |f| %>
-  <% if @planned_time.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@planned_time.errors.count, "error") %> prohibited this planned_time from being saved:</h2>
-
-      <ul>
-      <% @planned_time.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @planned_time, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :hours, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :hours, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :when, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :when, :class => 'date_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :user_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :user_id, User.all, :class => 'dropdown-menu' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :project_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :project_id, Project.all, :class => 'dropdown-menu' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :hours %><br />
-    <%= f.text_field :hours %>
-  </div>
-  <div class="field">
-    <%= f.label :when %><br />
-    <%= f.date_select :when %>
-  </div>
-  <div class="field">
-    <%= f.label :user %><br />
-    <%= f.text_field :user %>
-  </div>
-  <div class="field">
-    <%= f.label :project %><br />
-    <%= f.text_field :project %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                planned_times_path, :class => 'btn' %>
   </div>
 <% end %>
