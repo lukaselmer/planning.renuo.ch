@@ -1,4 +1,10 @@
 PlanningRenuoCh::Application.routes.draw do
+  resources :planned_times
+
+  resources :projects
+
+  resources :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

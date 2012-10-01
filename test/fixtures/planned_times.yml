@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  hours: 9.99
+  when: 2012-10-01
+  user: 
+  project: 
+
+two:
+  hours: 9.99
+  when: 2012-10-01
+  user: 
+  project: 
