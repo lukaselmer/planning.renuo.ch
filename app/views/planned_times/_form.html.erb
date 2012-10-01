@@ -14,13 +14,13 @@
   <div class="control-group">
     <%= f.label :user_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.select :user_id, User.all, :class => 'dropdown-menu' %>
+      <%= f.collection_select :user_id, User.all, :id, :name, :class => 'dropdown-menu' %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :project_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.select :project_id, Project.all, :class => 'dropdown-menu' %>
+      <%= f.collection_select :project_id, Project.all, :id, :name, :class => 'dropdown-menu' %>
     </div>
   </div>
 
