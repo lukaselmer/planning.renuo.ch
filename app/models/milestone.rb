@@ -1,3 +1,4 @@
 class Milestone < ActiveRecord::Base
-  attr_accessible :name, :when
+  belongs_to :project
+  def to_s() name end
 end

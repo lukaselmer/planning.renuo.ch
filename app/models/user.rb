@@ -1,4 +1,4 @@
 class User < ActiveRecord::Base
-  attr_accessible :name
+  include ActiveModel::ForbiddenAttributesProtection
   def to_s() name end
 end

@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(:version => 20121007194646) do
   create_table "milestones", :force => true do |t|
     t.string   "name",       :null => false
     t.date     "when",       :null => false
+    t.integer  "hours",      :null => false
+    t.integer  "project_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

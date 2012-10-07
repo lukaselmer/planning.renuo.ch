@@ -11,6 +11,18 @@
       <%= f.date_select :when, :class => 'date_select' %>
     </div>
   </div>
+  <div class="control-group">
+    <%= f.label :hours, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :hours, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :project_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :project_id, :class => 'number_field' %>
+    </div>
+  </div>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>

@@ -20,8 +20,8 @@
         <td><%= link_to planned_time.id, planned_time_path(planned_time) %></td>
         <td><%= planned_time.hours %></td>
         <td><%= planned_time.when %></td>
-        <td><%= planned_time.user %></td>
-        <td><%= planned_time.project %></td>
+        <td><%= planned_time.user_id %></td>
+        <td><%= planned_time.project_id %></td>
         <td><%=l planned_time.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
