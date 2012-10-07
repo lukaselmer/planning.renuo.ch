@@ -1,5 +1,8 @@
 class HomeController < ApplicationController
   def dashboard
-    @planned_times = PlannedTime.all
+    @items = []
+    @items += PlannedTime.all
+    @items += Milestone.all
+    @items.order_by :when
   end
 end
