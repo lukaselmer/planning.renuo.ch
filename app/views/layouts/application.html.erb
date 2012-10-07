@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%
+links = {User => users_path, PlannedTime => planned_times_path, Project => projects_path, Milestone => milestones_path}
+%><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -48,9 +50,9 @@
           <div class="container nav-collapse">
             <ul class="nav">
               <li><%= link_to "Home", "/"  %></li>
-              <li><%= link_to User.model_name.human.pluralize, users_path  %></li>
-              <li><%= link_to PlannedTime.model_name.human.pluralize, planned_times_path  %></li>
-              <li><%= link_to Project.model_name.human.pluralize, projects_path  %></li>
+              <% links.each do |k, v| %>
+                <li><%= link_to k.model_name.human.pluralize, v %></li>
+              <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -68,9 +70,9 @@
               <ul class="nav nav-list">
                 <li class="nav-header">Sidebar</li>
                 <li><%= link_to "Home", "/"  %></li>
-                <li><%= link_to User.model_name.human.pluralize, users_path  %></li>
-                <li><%= link_to PlannedTime.model_name.human.pluralize, planned_times_path  %></li>
-                <li><%= link_to Project.model_name.human.pluralize, projects_path  %></li>
+                <% links.each do |k, v| %>
+                  <li><%= link_to k.model_name.human.pluralize, v %></li>
+                <% end %>
               </ul>
             </div><!--/.well -->
           </div><!--/span-->

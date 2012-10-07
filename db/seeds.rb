@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+[["Lukas", 10], ["Diego", 10], ["Ueli", 10]].each do |name, overhead|
+  User.create!(name: name, overhead: overhead)
+end

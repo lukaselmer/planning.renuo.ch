@@ -1,4 +1,6 @@
 PlanningRenuoCh::Application.routes.draw do
+  resources :milestones
+
   get "home/dashboard"
 
   resources :planned_times

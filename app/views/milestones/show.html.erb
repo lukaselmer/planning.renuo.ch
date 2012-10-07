@@ -1,26 +1,26 @@
-<%- model_class = PlannedTime -%>
+<%- model_class = Milestone -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:hours) %>:</strong></dt>
-  <dd><%= @planned_time.hours %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @milestone.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:when) %>:</strong></dt>
-  <dd><%= @planned_time.when %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
-  <dd><%= @planned_time.user_id %></dd>
+  <dd><%= @milestone.when %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:hours) %>:</strong></dt>
+  <dd><%= @milestone.hours %></dd>
   <dt><strong><%= model_class.human_attribute_name(:project_id) %>:</strong></dt>
-  <dd><%= @planned_time.project_id %></dd>
+  <dd><%= @milestone.project_id %></dd>
 </dl>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              planned_times_path, :class => 'btn'  %>
+              milestones_path, :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_planned_time_path(@planned_time), :class => 'btn' %>
+              edit_milestone_path(@milestone), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              planned_time_path(@planned_time),
+              milestone_path(@milestone),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>

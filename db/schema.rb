@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121001153557) do
+ActiveRecord::Schema.define(:version => 20121007194646) do
+
+  create_table "milestones", :force => true do |t|
+    t.string   "name",       :null => false
+    t.date     "when",       :null => false
+    t.integer  "hours",      :null => false
+    t.integer  "project_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "planned_times", :force => true do |t|
     t.decimal  "hours",      :precision => 4, :scale => 2, :null => false
@@ -32,9 +41,10 @@ ActiveRecord::Schema.define(:version => 20121001153557) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name",                                     :null => false
+    t.decimal  "overhead",   :precision => 4, :scale => 2, :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
   end
 
 end

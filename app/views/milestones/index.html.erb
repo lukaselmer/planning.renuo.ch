@@ -1,4 +1,4 @@
-<%- model_class = PlannedTime -%>
+<%- model_class = Milestone -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
@@ -6,28 +6,28 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:hours) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:when) %></th>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <th><%= model_class.human_attribute_name(:hours) %></th>
       <th><%= model_class.human_attribute_name(:project_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
-    <% @planned_times.each do |planned_time| %>
+    <% @milestones.each do |milestone| %>
       <tr>
-        <td><%= link_to planned_time.id, planned_time_path(planned_time) %></td>
-        <td><%= planned_time.hours %></td>
-        <td><%= planned_time.when %></td>
-        <td><%= planned_time.user_id %></td>
-        <td><%= planned_time.project_id %></td>
-        <td><%=l planned_time.created_at %></td>
+        <td><%= link_to milestone.id, milestone_path(milestone) %></td>
+        <td><%= milestone.name %></td>
+        <td><%= milestone.when %></td>
+        <td><%= milestone.hours %></td>
+        <td><%= milestone.project_id %></td>
+        <td><%=l milestone.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_planned_time_path(planned_time), :class => 'btn btn-mini' %>
+                      edit_milestone_path(milestone), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      planned_time_path(planned_time),
+                      milestone_path(milestone),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
@@ -38,5 +38,5 @@
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_planned_time_path,
+            new_milestone_path,
             :class => 'btn btn-primary' %>
