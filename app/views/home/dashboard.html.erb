@@ -13,14 +13,14 @@
   <tbody>
     <% total = 0.0
     @items.each do |item| %>
-      <th<%= ' class="success"' if item.class == Milestone %>>
+      <tr<%= ' class="success"' if item.class == Milestone %>>
         <tr><%= item.class.model_name.human %></tr>
         <tr><%= item_name item %></tr>
         <tr><%= item.when %></tr>
         <tr><%= item_kw item %></tr>
         <tr><%= item_hours item %></tr>
         <tr><%= total += item_hours(item) %></tr>
-      </th>
+      </tr>
     <% end %>
   </tbody>
 </table>
