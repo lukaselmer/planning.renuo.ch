@@ -1,2 +1,15 @@
-<h1>Home#dashboard</h1>
-<p>Find me in app/views/home/dashboard.html.erb</p>
+<h1>Dashboard</h1>
+<table class="table table-striped table-hover table-condensed">
+  <thead>
+    <tr>
+      <th>Object</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+      <th<%= ' class="success"' if item.class == Milestone %>>
+        <tr><%= item.class.model_name.human %></tr>
+      </th>
+    <% end %>
+  </tbody>
+</table>
