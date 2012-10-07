@@ -3,6 +3,6 @@ class HomeController < ApplicationController
     @items = []
     @items += PlannedTime.all
     @items += Milestone.all
-    @items.order_by :when
+    @items.sort_by &:when
   end
 end
