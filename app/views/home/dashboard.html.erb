@@ -11,15 +11,15 @@
     </tr>
   </thead>
   <tbody>
-    <% total = 0.0
+    <% total = 0
     @items.each do |item| %>
-      <tr<%= ' class="success"' if item.class == Milestone %>>
-        <tr><%= item.class.model_name.human %></tr>
-        <tr><%= item_name item %></tr>
-        <tr><%= item.when %></tr>
-        <tr><%= item_kw item %></tr>
-        <tr><%= item_hours item %></tr>
-        <tr><%= total += item_hours(item) %></tr>
+      <tr<%= ' class="success"'.html_safe if item.class == Milestone %>>
+        <td><%= item.class.model_name.human %></td>
+        <td><%= item_name item %></td>
+        <td><%= item.when %></td>
+        <td><%= item_kw item %></td>
+        <td><%= item_hours(item) %></td>
+        <td><%= (total += item_hours(item)).round(2) %></td>
       </tr>
     <% end %>
   </tbody>

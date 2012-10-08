@@ -7,7 +7,7 @@ module HomeHelper
     return item.when.cweek
   end
   def item_hours item
-    return -item.hours if item.is_a? Milestone
-    item.hours
+    return -item.hours.to_i if item.is_a? Milestone
+    item.hours_without_overhead
   end
 end
