@@ -4,7 +4,7 @@ module HomeHelper
     item.user
   end
   def item_kw item
-    return item.when.cweek
+    item.when.cweek
   end
   def item_hours item
     return -item.hours.to_i if item.is_a? Milestone

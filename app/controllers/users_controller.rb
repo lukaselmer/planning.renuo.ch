@@ -4,9 +4,11 @@ class UsersController < ApplicationController
   def index
     @users = User.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @users }
+    @h = LazyHighCharts::HighChart.new('graph') do |f|
+      #f.options[:xAxis][:min] = "area"
+      User.scoped.includes(:planned_times).each do |u|
+        f.series(name: u.name, data: u.planned_hours_by_week)
+      end
     end
   end
 
