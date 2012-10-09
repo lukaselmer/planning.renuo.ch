@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121007194646) do
+ActiveRecord::Schema.define(:version => 20121009080124) do
 
   create_table "milestones", :force => true do |t|
     t.string   "name",       :null => false
@@ -26,12 +26,10 @@ ActiveRecord::Schema.define(:version => 20121007194646) do
     t.decimal  "hours",      :precision => 4, :scale => 2, :null => false
     t.date     "when",                                     :null => false
     t.integer  "user_id",                                  :null => false
-    t.integer  "project_id",                               :null => false
     t.datetime "created_at",                               :null => false
     t.datetime "updated_at",                               :null => false
   end
 
-  add_index "planned_times", ["project_id"], :name => "index_planned_times_on_project_id"
   add_index "planned_times", ["user_id"], :name => "index_planned_times_on_user_id"
 
   create_table "projects", :force => true do |t|
