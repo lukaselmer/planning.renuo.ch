@@ -7,8 +7,9 @@ gem 'twitter-bootstrap-rails' #, :git => 'git://github.com/seyhunak/twitter-boot
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'mysql2'
-#gem 'pg'
+gem 'mysql2' if !RUBY_PLATFORM =~ /darwin/
+gem 'pg' if RUBY_PLATFORM =~ /darwin/
+
 gem 'strong_parameters'
 
 # Gems used only for assets and not required
