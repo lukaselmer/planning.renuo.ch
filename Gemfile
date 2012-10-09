@@ -7,7 +7,7 @@ gem 'twitter-bootstrap-rails' #, :git => 'git://github.com/seyhunak/twitter-boot
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'mysql2' if !RUBY_PLATFORM =~ /darwin/
+gem 'mysql2' #if !RUBY_PLATFORM =~ /darwin/
 gem 'pg' if RUBY_PLATFORM =~ /darwin/
 
 gem 'strong_parameters'
@@ -22,9 +22,9 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-
-  gem 'lazy_high_charts'
 end
+
+gem 'lazy_high_charts'
 
 gem 'jquery-rails'
 
