@@ -8,6 +8,6 @@ module HomeHelper
   end
   def item_hours item
     return -item.hours.to_i if item.is_a? Milestone
-    item.hours_without_overhead
+    item.estimated_or_achieved_hours_without_overhead
   end
 end

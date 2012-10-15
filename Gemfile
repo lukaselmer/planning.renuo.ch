@@ -26,6 +26,8 @@ group :assets do
   gem 'lazy_high_charts'
 end
 
+#gem 'debugger'
+#gem 'ruby-debug-ide'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password

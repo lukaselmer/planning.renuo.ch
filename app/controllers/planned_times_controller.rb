@@ -2,7 +2,7 @@ class PlannedTimesController < ApplicationController
   # GET /planned_times
   # GET /planned_times.json
   def index
-    @planned_times = PlannedTime.all
+    @planned_times = PlannedTime.scoped.order("`when`")
 
     respond_to do |format|
       format.html # index.html.erb
