@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 20121015144210) do
     t.decimal  "achieved_hours", :precision => 4, :scale => 2
   end
 
-  add_index "planned_times", %w(user_id), :name => "index_planned_times_on_user_id"
+  add_index "planned_times", ["user_id"], :name => "index_planned_times_on_user_id"
 
   create_table "projects", :force => true do |t|
     t.string   "name"
