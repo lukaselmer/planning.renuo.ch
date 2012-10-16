@@ -21,6 +21,20 @@ class MilestonesController < ApplicationController
     end
   end
 
+  def up
+    @milestone = Milestone.find(params[:id])
+    @milestone.when -= 1.week
+    @milestone.save!
+    redirect_to :back
+  end
+
+  def down
+    @milestone = Milestone.find(params[:id])
+    @milestone.when += 1.week
+    @milestone.save!
+    redirect_to :back
+  end
+
   # GET /milestones/new
   # GET /milestones/new.json
   def new

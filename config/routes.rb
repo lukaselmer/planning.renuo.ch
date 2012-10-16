@@ -1,9 +1,17 @@
 PlanningRenuoCh::Application.routes.draw do
-  resources :milestones
-
   get "home/dashboard"
 
-  resources :planned_times
+  resources :milestones do
+    member do
+      get 'up', 'down'
+    end
+  end
+
+  resources :planned_times do
+    member do
+      get 'up', 'down'
+    end
+  end
 
   resources :projects
 

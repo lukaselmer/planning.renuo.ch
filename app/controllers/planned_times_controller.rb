@@ -21,6 +21,20 @@ class PlannedTimesController < ApplicationController
     end
   end
 
+  def up
+    @planned_time = PlannedTime.find(params[:id])
+    @planned_time.when -= 1.week
+    @planned_time.save!
+    redirect_to :back
+  end
+
+  def down
+    @planned_time = PlannedTime.find(params[:id])
+    @planned_time.when += 1.week
+    @planned_time.save!
+    redirect_to :back
+  end
+
   # GET /planned_times/new
   # GET /planned_times/new.json
   def new

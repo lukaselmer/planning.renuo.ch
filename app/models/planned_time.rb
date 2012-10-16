@@ -3,7 +3,7 @@ class PlannedTime < ActiveRecord::Base
   belongs_to :project
 
   def hours_without_overhead
-    (hours * (100.0-user.overhead)).round / 100.0
+    ((hours * (100.0-user.overhead)) / 25.0).floor / 4.0
   end
 
   def estimated_or_achieved_hours_without_overhead
