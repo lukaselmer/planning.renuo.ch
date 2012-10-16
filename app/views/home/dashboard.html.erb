@@ -7,7 +7,6 @@
       <th>Name</th>
       <th>When</th>
       <th>Hours</th>
-      <!--<th>KW</th>-->
       <th>Total availible time</th>
       <th></th>
     </tr>
@@ -28,8 +27,6 @@
         <td><%= item_name item %></td>
         <td class="muted"><%= item.when %></td>
         <td class="muted"><%= item_hours(item) %></td>
-        <!--<td><% if last_kw != item_kw(item) %><span class="badge badge-info"><%= item_kw(item) %></span><% end %></td>-->
-        <% last_kw = item_kw item %>
         <td><%= total.round(2) %></td>
         <td>
           <%= link_to "<i class='icon-chevron-up'></i>".html_safe, [:up, item], :class => 'btn btn-mini' %>
@@ -37,6 +34,7 @@
           <%= link_to "<i class='icon-pencil'></i>".html_safe, [:edit, item], :class => 'btn btn-mini' %>
         </td>
       </tr>
+      <% last_kw = item_kw item %>
     <% end %>
   </tbody>
 </table>
