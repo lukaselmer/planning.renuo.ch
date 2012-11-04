@@ -22,7 +22,7 @@
       <% end %>
 
       <tr<%= " class='#{milestone_color total}'".html_safe if item.class == Milestone %>>
-        <td><span class="badge badge-warning"><%= item_kw(item) %></td>
+        <td><span class="badge badge-warning" class="redmine-kw" data-kw-start-date="<%= kw_start_date(item) %>" data-kw-end-date="<%= kw_start_date(item) %>"><%= item_kw(item) %></span></td>
         <td><% if item.is_a? Milestone %><span class="label label-info"><%= item.project %></span><% end %></td>
         <td><%= item_name item %></td>
         <td class="muted"><%= item.when %></td>
