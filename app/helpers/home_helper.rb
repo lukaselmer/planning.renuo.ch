@@ -17,7 +17,7 @@ module HomeHelper
   end
 
   def date_for_kw date, weekday
-    Date.commercial( date.year, date.cweek, weekday ).strftime( "%y-%m-%d" )
+    Date.commercial( date.year, date.cweek, weekday ).strftime( "%Y-%m-%d" )
   end
 
   def item_hours item

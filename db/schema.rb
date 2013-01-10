@@ -39,6 +39,27 @@ ActiveRecord::Schema.define(:version => 20121015144210) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "sys_logs", :force => true do |t|
+    t.integer "userid",                   :default => 0,  :null => false
+    t.integer "action",     :limit => 1,  :default => 0,  :null => false
+    t.integer "recuid",                   :default => 0,  :null => false
+    t.string  "tablename",                :default => ""
+    t.integer "recpid",                   :default => 0,  :null => false
+    t.integer "error",      :limit => 1,  :default => 0,  :null => false
+    t.text    "details",                                  :null => false
+    t.integer "tstamp",                   :default => 0,  :null => false
+    t.integer "typex",      :limit => 1,  :default => 0,  :null => false
+    t.integer "details_nr", :limit => 1,  :default => 0,  :null => false
+    t.string  "ip",         :limit => 39
+    t.string  "log_data",                 :default => ""
+    t.integer "event_pid",                :default => -1, :null => false
+    t.integer "workspace",                :default => 0,  :null => false
+    t.string  "newid",      :limit => 20
+  end
+
+  add_index "sys_logs", ["recuid", "id"], :name => "recuidIdx"
+  add_index "sys_logs", ["userid", "event_pid"], :name => "event"
+
   create_table "users", :force => true do |t|
     t.string   "name",                                     :null => false
     t.decimal  "overhead",   :precision => 4, :scale => 2, :null => false
